@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<div>
+    <nav>
+        <a href="/Book/ListBooks">Cancel</a>
+    </nav>
+    <h2>Are you sure you want to delete?</h2>
+    <p>This action cannot be undone.</p>
+    <form method="POST" action="/Book/Delete/@ViewBag.BookId">
+        <button>
+            Confirm
+        </button>
+    </form>
+</div>
+

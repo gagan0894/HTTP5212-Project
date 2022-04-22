@@ -1,0 +1,36 @@
+﻿@model HTTP5212_Project.Models.Book
+
+<h2>Update Book here</h2>
+<form method="POST" action="/Book/Modify/@Model.BookId">
+    <div style=" margin:20px;">
+        <label>Book Name</label>
+        
+        <input type="text" name="name" id="name" value=@Model.title/>
+            
+    </div>
+    <div style=" margin:20px;">
+        <label>Description</label>
+        
+        <input type="text" name="description" id="description" value=@Model.description/>
+            
+    </div>
+    <div style=" margin:20px;">
+        <label>Genre</label>
+        
+            <input type="text" name="genre" id="genre" value=@Model.Genre.GenreName/>
+        
+
+    </div>
+    <div style=" margin:20px;">
+        <label>Author First Name</label>
+        <input type="text" name="afname" id="afname" value=@Model.Author.FirstName/>
+    </div>
+    <div style=" margin:20px;">
+        <label>Author Last Name</label>
+        <input type="text" name="alname" id="alname" value=@Model.Author.LastName/>
+    </div>
+    <div style=" margin:20px;">
+        <input type="submit" value="Update Book" name="updateBook" id="updateBook" />
+    </div>
+</form>
+

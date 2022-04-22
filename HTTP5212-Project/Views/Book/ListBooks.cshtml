@@ -1,0 +1,58 @@
+﻿@model List<HTTP5212_Project.Models.BookDto>
+@{
+    ViewData["Title"] = "List Books";
+    string[] Headers = new string[] { "Book Name", "Description", "Genre", "Author" };
+}
+<div style=" margin-top: 20px; margin-bottom: 20px;">
+    <a href="New"><h1>Add a new Book</h1></a>
+</div>
+<div class="table">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                @{
+                    foreach (var head in Headers)
+                    {
+                        <th>
+                            @head
+                        </th>
+                    }
+                }
+            </tr>
+        </thead>
+        <tbody>
+
+            @{
+                foreach (var book in Model)
+                {
+                    <tr>
+                        <td>
+                            @book.title
+                        </td>
+                        <td>
+                            @book.description
+                        </td>
+                        <td>
+                            @book.GenreName
+                        </td>
+                        <td>
+                            @book.AuthorName
+                        </td>
+                        <td>
+                            <div>
+                                <a href="/Book/Update/@book.BookID">Update</a>
+                            </div>
+                        </td>
+                        <td>
+
+                            <div>
+                                <a href="/Book/DeleteConfirm/@book.BookID">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+</div>

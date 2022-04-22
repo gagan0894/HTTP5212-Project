@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Show";
+    string[] Headers = new string[] { "Book Description Author Genre" };
+}
+
+<h2>List all Books</h2>
+<div class="table">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                @{
+                    foreach (var head in Headers)
+                    {
+                        <th>
+                            @head
+                        </th>
+                    }
+                }
+            </tr>
+        </thead>
+        <tbody>
+
+            @{
+                foreach (var teacher in ViewBag.TeachersList)
+                {
+                    <tr>
+                        <td>
+                            @teacher
+                        </td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+</div>
+
